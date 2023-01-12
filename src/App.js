@@ -12,6 +12,7 @@ export const ACTIONS = {
 }
 
 function reducer(state, { type, payload }) {
+  // eslint-disable-next-line default-case
   switch (type) {
     case ACTIONS.ADD_DIGIT:
       if (state.overwrite) {
@@ -102,6 +103,7 @@ function evaluate({ currentOperand, previousOperand, operation }) {
   const current = parseFloat(currentOperand)
   if (isNaN(prev) || isNaN(current)) return ""
   let computation = ""
+  // eslint-disable-next-line default-case
   switch (operation) {
     case "+":
       computation = prev + current
@@ -174,6 +176,7 @@ function App() {
       >
         =
       </button>
+      <a href="https://github.com/binumvij/" className="link">@binumvij</a>
     </div>
   )
 }
